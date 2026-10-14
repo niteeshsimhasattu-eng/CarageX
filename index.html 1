@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarageX | Multi Brand Auto Care & Diagnostics Madhapur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-darkest: #0a0c10;
+      --bg-dark: #12161f;
+      --bg-card: #1a202c;
+      --accent-red: #e63946;
+      --accent-red-hover: #c1121f;
+      --accent-gold: #ffb703;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #2d3748;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-darkest);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    /* Top Strip */
+    .top-strip {
+      background: #000000;
+      padding: 10px 5%;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-strip a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(18, 22, 31, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+    }
+    /* Logo styling if you upload logo.png */
+    .brand-logo img {
+      max-height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-logo span { color: var(--accent-red); }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent-red); }
+    .btn-header-call {
+      background: var(--accent-red);
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+    .btn-header-call:hover { background: var(--accent-red-hover); }
+
+    /* Hero Banner (Fast Track Style) */
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, rgba(10, 12, 16, 0.75) 0%, rgba(10, 12, 16, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1613214149922-f1809c99b414?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 120px 20px 90px;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+    }
+    .hero-box { max-width: 850px; margin: auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(230, 57, 70, 0.15);
+      border: 1px solid var(--accent-red);
+      color: var(--accent-red);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 5.5vw, 56px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .hero h1 span { color: var(--accent-red); }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent-red);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover { background: var(--accent-red-hover); transform: translateY(-2px); }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-whatsapp:hover { background: #1eb956; transform: translateY(-2px); }
+
+    /* Fast Track Features Bar */
+    .perks-strip {
+      max-width: 1200px;
+      margin: -40px auto 40px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .perk-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .perk-item i {
+      font-size: 32px;
+      color: var(--accent-gold);
+    }
+    .perk-item h4 { font-size: 17px; margin-bottom: 2px; }
+    .perk-item p { font-size: 13px; color: var(--text-muted); }
+
+    /* Sections */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-head h2 {
+      font-size: 34px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .section-head h2 span { color: var(--accent-red); }
+    .section-head p { color: var(--text-muted); font-size: 15px; margin-top: 6px; }
+
+    /* Dark Grid Cards */
+    .services-dark-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .dark-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .dark-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(230, 57, 70, 0.15);
+    }
+    .card-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-body { padding: 22px; }
+    .card-body h3 { font-size: 19px; margin-bottom: 10px; color: #fff; }
+    .card-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+    .card-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Appointment & Workshop Details */
+    .dark-booking-panel {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+    .info-list { margin-top: 24px; }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .info-row i {
+      font-size: 20px;
+      color: var(--accent-red);
+      margin-top: 3px;
+    }
+    .info-row strong { color: #fff; }
+    .info-row p, .info-row a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+    .info-row a:hover { color: var(--accent-gold); }
+
+    /* Dark Input Fields */
+    .dark-form { display: flex; flex-direction: column; gap: 14px; }
+    .dark-form input, .dark-form select, .dark-form textarea {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 13px 16px;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+    }
+    .dark-form input:focus, .dark-form select:focus, .dark-form textarea:focus {
+      border-color: var(--accent-red);
+    }
+    .btn-submit-dark {
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn-submit-dark:hover { background: var(--accent-red-hover); }
+
+    /* Floating WhatsApp */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent-red); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div><i class="fa-solid fa-location-dot"></i> Madhapur, VIP Hills, Silicon Valley, Hyderabad</div>
+    <div>Call Service Desk: <a href="tel:+918977001761">+91 89770 01761</a></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <!-- If you upload a logo.png to GitHub, replace this icon with: <img src="logo.png" alt="CarageX Logo" /> -->
+        <i class="fa-solid fa-gauge-high" style="color: var(--accent-red);"></i> CARAGE<span>X</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book Service</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="tel:+918977001761" class="btn-header-call"><i class="fa-solid fa-phone"></i> 089770 01761</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-box">
+      <span class="hero-badge">Multi-Brand Specialist Garage</span>
+      <h1>Precision Car Care & <span>Diagnostics</span> In Madhapur</h1>
+      <p>Dealership-level mechanical maintenance, suspension rebuilds, computer diagnostics, and premium paint booth finish for all makes.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary">Book Inspection</a>
+        <a href="https://wa.me/918977001761?text=Hello%20CarageX,%20I%20want%20to%20inquire%20about%20car%20service" class="btn-whatsapp" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Badges -->
+  <div class="perks-strip">
+    <div class="perk-item">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <div>
+        <h4>OEM Diagnostics</h4>
+        <p>Advanced OBD-II computer scanning</p>
+      </div>
+    </div>
+    <div class="perk-item">
+      <i class="fa-solid fa-shield-halved"></i>
+      <div>
+        <h4>100% Genuine Spares</h4>
+        <p>Certified parts and OEM engine oils</p>
+      </div>
+    </div>
+    <div class="perk-item">
+      <i class="fa-solid fa-truck-pickup"></i>
+      <div>
+        <h4>Doorstep Pickup</h4>
+        <p>Available across Hitec City & Madhapur</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <section class="section-wrap" id="services">
+    <div class="section-head">
+      <h2>Our Core <span>Services</span></h2>
+      <p>Quality mechanical engineering and detailing for luxury and everyday cars.</p>
+    </div>
+
+    <div class="services-dark-grid">
+      <div class="dark-card">
+        <!-- To use your uploaded photo, replace src with your file name: src="periodic-service.jpg" -->
+        <img class="card-img" src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="Periodic Maintenance" />
+        <div class="card-body">
+          <h3>Periodic Maintenance</h3>
+          <p>Synthetic oil change, OEM oil filter, fluid top-up, spark plugs, and a comprehensive 50-point safety check.</p>
+          <a href="#booking" class="card-link">Schedule Service →</a>
+        </div>
+      </div>
+
+      <div class="dark-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" alt="Brakes & Suspension" />
+        <div class="card-body">
+          <h3>Brake & Suspension</h3>
+          <p>Brake pad replacement, disc skimming, caliper overhaul, steering alignment, and shock absorber rebuilding.</p>
+          <a href="#booking" class="card-link">Schedule Service →</a>
+        </div>
+      </div>
+
+      <div class="dark-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=80" alt="AC Cooling" />
+        <div class="card-body">
+          <h3>AC Overhaul & Cooling</h3>
+          <p>Evaporator deep cleaning, condenser wash, eco-friendly AC gas recharging, leak checks, and compressor service.</p>
+          <a href="#booking" class="card-link">Schedule Service →</a>
+        </div>
+      </div>
+
+      <div class="dark-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Dent and Paint" />
+        <div class="card-body">
+          <h3>Dent Repair & Painting</h3>
+          <p>Dust-free paint booth matching, scratch correction, panel beat repairs, and ceramic coating packages.</p>
+          <a href="#booking" class="card-link">Schedule Service →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking & Workshop Location Panel -->
+  <section class="section-wrap" id="booking">
+    <div class="dark-booking-panel">
+      <div class="info-side" id="location">
+        <h3 style="font-size: 24px; text-transform: uppercase;">Workshop <span>Location</span></h3>
+        <p style="color: var(--text-muted); margin-top: 6px;">Visit our service station or book a pick-and-drop slot.</p>
+
+        <div class="info-list">
+          <div class="info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Address</strong>
+              <p>100 Feet Rd, near Game Point, VIP Hills, Silicon Valley, Madhapur, Hyderabad, Telangana 500081</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Contact Number</strong>
+              <p><a href="tel:+918977001761">+91 89770 01761</a></p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fa-brands fa-instagram"></i>
+            <div>
+              <strong>Official Instagram</strong>
+              <p><a href="https://www.instagram.com/carageindia/" target="_blank">@carageindia</a></p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Working Hours</strong>
+              <p>Mon - Sun: 8:30 AM – 8:30 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-side">
+        <h3 style="font-size: 24px; text-transform: uppercase; margin-bottom: 20px;">Book An <span>Appointment</span></h3>
+        <form class="dark-form" onsubmit="event.preventDefault(); alert('Booking request sent to CarageX team!');">
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Mobile Number" required />
+          <input type="text" placeholder="Car Model (e.g. BMW 320d, Creta, Swift)" required />
+          <select required>
+            <option value="" disabled selected>Select Service Needed</option>
+            <option value="periodic">Periodic General Service</option>
+            <option value="brakes">Brakes & Suspension</option>
+            <option value="ac">Car AC Service</option>
+            <option value="dent">Dent & Painting</option>
+            <option value="diagnostics">Engine Diagnostic Scanning</option>
+          </select>
+          <button type="submit" class="btn-submit-dark">Confirm Booking Slot</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/918977001761?text=Hello%20CarageX,%20I%20would%20like%20to%20book%20a%20car%20inspection." class="floating-wa" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CarageX - Multi Brand Car Service & Repair. All rights reserved.</p>
+    <p style="margin-top: 6px;"><a href="https://www.instagram.com/carageindia/" target="_blank"><i class="fa-brands fa-instagram"></i> Follow @carageindia</a></p>
+  </footer>
+
+</body>
+</html>
