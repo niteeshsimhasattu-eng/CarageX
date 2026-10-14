@@ -278,7 +278,7 @@
       gap: 6px;
     }
 
-    /* Horizontal Scrolling Google Reviews Section */
+    /* Horizontal Google Reviews Carousel */
     .reviews-section {
       position: relative;
     }
@@ -311,8 +311,8 @@
       background: var(--accent);
     }
     .review-card-h {
-      flex: 0 0 380px;
-      max-width: 380px;
+      flex: 0 0 360px;
+      max-width: 360px;
       scroll-snap-align: start;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -341,3 +341,554 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
+      background: #1e293b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      border: 2px solid var(--border-color);
+    }
+    .reviewer-meta h4 {
+      font-size: 15px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .reviewer-meta span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .google-icon {
+      color: #4285f4;
+      font-size: 22px;
+    }
+    .star-rating {
+      color: #fbbf24;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 3px;
+    }
+    .review-text {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #10b981;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .carousel-nav-btns {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 15px;
+    }
+    .carousel-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .carousel-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Workshop & Contact Box */
+    .contact-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+    .contact-info h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .info-item i {
+      font-size: 20px;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+    .info-item div { font-size: 15px; color: var(--text-muted); }
+    .info-item div strong { color: #fff; display: block; margin-bottom: 2px; }
+    .info-item a { color: #fff; text-decoration: none; }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    input, select {
+      width: 100%;
+      padding: 13px 16px;
+      background: #090c13;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: var(--accent);
+    }
+    .btn-submit {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--accent-hover); }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background: #06080e;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notification -->
+  <div class="top-strip">
+    <div><i class="fa-solid fa-gauge-high"></i> Multi-Brand Diagnostics & Performance Garage • Madhapur</div>
+    <div>Call Service Desk: <a href="tel:+918977001761">+91 89770 01761</a></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-wrench" style="color: var(--accent);"></i>
+        CARAGE<span>X</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book Service</a></li>
+        <li><a href="#workshop">Workshop</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="tel:+918977001761" class="btn-header"><i class="fa-solid fa-phone"></i> 089770 01761</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">Madhapur's Leading Car Care Hub</div>
+    <h1>Premium Multi-Brand Car Service <span>Without Dealership Markup</span></h1>
+    <p>From advanced electrical diagnostics to cashless insurance claims and ceramic paint protection—certified care for domestic, Japanese, and luxury European vehicles.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-main"><i class="fa-solid fa-calendar-check"></i> Book Inspection</a>
+      <a href="https://wa.me/918977001761?text=Hi%20CarageX,%20I%20would%20like%20to%20inquire%20about%20car%20service" target="_blank" class="btn-outline">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Stat Boxes -->
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Genuine OEM Parts</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">Cashless</div>
+      <div class="stat-label">Tie-ups With All Insurers</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">Free</div>
+      <div class="stat-label">Pickup & Drop in Madhapur</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">4.9★</div>
+      <div class="stat-label">15+ Google Reviews</div>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <section class="section" id="services">
+    <div class="section-head">
+      <h2>Comprehensive Auto Services</h2>
+      <p>Precision diagnostics, body repair, cashless insurance, and high-performance tuning.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Electrical & Mechanical -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=700&q=80" alt="Electrical and Mechanical Service" />
+        <div class="service-body">
+          <h3>Electrical & Mechanical</h3>
+          <p>Full engine overhaul, computerized ECM scanning, wiring harness repairs, transmission tuning, and electronic fault resolution using OEM diagnostic tools.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> Advanced OBD2 Diagnostics</div>
+        </div>
+      </div>
+
+      <!-- 2. Denting & Painting -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80" alt="Denting and Painting" />
+        <div class="service-body">
+          <h3>Denting & Painting</h3>
+          <p>Heated dust-free paint booth, pinpoint computerized shade matching, hydraulic puller dent removal, and mirror clear-coat restoration.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> Factory-Grade Paint Finish</div>
+        </div>
+      </div>
+
+      <!-- 3. Cashless Insurance -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="Cashless Insurance Claims" />
+        <div class="service-body">
+          <h3>Cashless Insurance</h3>
+          <p>Hassle-free accidental repair claims with all major insurance providers. We handle survey inspections, paperwork, and end-to-end processing with zero advance stress.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> All Major Insurers Supported</div>
+        </div>
+      </div>
+
+      <!-- 4. A/C & Battery Repair -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=80" alt="AC and Battery Repair" />
+        <div class="service-body">
+          <h3>A/C & Battery Repair</h3>
+          <p>Compressor rebuilds, eco-friendly refrigerant refills, cooling coil leak checks, alternator testing, and doorstep replacement of branded batteries with warranty.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> Maximum Chilling & Instant Crank</div>
+        </div>
+      </div>
+
+      <!-- 5. Wheel Alignment & Balancing -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80" alt="Wheel Alignment and Balancing" />
+        <div class="service-body">
+          <h3>Wheel Alignment & Balancing</h3>
+          <p>3D computerized laser wheel alignment, dynamic computerized wheel balancing, tire rotation, and camber-toe calibration to prevent uneven tire wear and steering pull.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> 3D Laser Precision Calibration</div>
+        </div>
+      </div>
+
+      <!-- 6. Ceramic & Paint Protection Treatment -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=700&q=80" alt="Ceramic and Paint Protection" />
+        <div class="service-body">
+          <h3>Ceramic & Paint Protection</h3>
+          <p>9H ceramic quartz coatings, multi-stage paint correction, swirl elimination, and hydrophobic Paint Protection Film (PPF) for UV defense and long-lasting gloss.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> 9H Hardness & Deep Hydrophobic Gloss</div>
+        </div>
+      </div>
+
+      <!-- 7. Car Wash & Detailing -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=700&q=80" alt="Car Wash and Detailing" />
+        <div class="service-body">
+          <h3>Car Wash & Detailing</h3>
+          <p>Underbody pressure wash, pH-neutral snow foam wash, interior deep steam extraction, leather seat conditioning, dashboard dressing, and odor sanitization.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> Deep Interior & Exterior Clean</div>
+        </div>
+      </div>
+
+      <!-- 8. Brake Fluid Check & Replacement -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=80" alt="Brake Fluid Check and Replacement" />
+        <div class="service-body">
+          <h3>Brake Fluid Check & Replacement</h3>
+          <p>Digital moisture test of brake fluid, complete pressure bleeding of old contaminated fluid, replacement with DOT 4 / DOT 5.1, and caliper inspection for immediate stopping power.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> High-Boiling Point Safety Assurance</div>
+        </div>
+      </div>
+
+      <!-- 9. Performance Parts & Tuning -->
+      <div class="service-card">
+        <img class="service-photo" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Performance Parts and Tuning" />
+        <div class="service-body">
+          <h3>Performance Parts & Upgrades</h3>
+          <p>Custom cold air intake kits, stainless steel exhaust setups, high-performance brake rotors, suspension lowering springs, and Stage 1 / Stage 2 remap consultations.</p>
+          <div class="service-tag"><i class="fa-solid fa-check"></i> Track-Tested Power & Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking & Workshop Details -->
+  <section class="section" id="booking">
+    <div class="contact-container">
+      <div class="contact-info" id="workshop">
+        <h3>Visit CarageX</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Drop by our facility or arrange convenient doorstep vehicle pickup in Madhapur & Hitec City.</p>
+        
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Workshop Location</strong>
+            100 Feet Rd, near Game Point, VIP Hills, Silicon Valley, Madhapur, Hyderabad, Telangana 500081
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Mobile & Appointments</strong>
+            <a href="tel:+918977001761">+91 89770 01761</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-brands fa-instagram"></i>
+          <div>
+            <strong>Instagram</strong>
+            <a href="https://www.instagram.com/carageindia/" target="_blank" style="color: var(--gold);">@carageindia</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form onsubmit="event.preventDefault(); alert('Booking request sent to CarageX! We will call you shortly.');">
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Mobile Number" required />
+          <input type="text" placeholder="Car Model (e.g. Swift, Creta, BMW 3 Series, Fortuner)" required />
+          <select required>
+            <option value="" disabled selected>Select Service Required</option>
+            <option value="electrical_mechanical">Electrical and Mechanical</option>
+            <option value="denting_painting">Denting and Painting</option>
+            <option value="cashless_insurance">Cashless Insurance Claim</option>
+            <option value="ac_battery">A/C & Battery Repair</option>
+            <option value="wheel_alignment">Wheel Alignment & Balancing</option>
+            <option value="ceramic_paint_protection">Ceramic & Paint Protection Treatment</option>
+            <option value="car_wash_detailing">Car Wash & Detailing</option>
+            <option value="brake_fluid">Brake Fluid Check & Replacement</option>
+            <option value="performance_parts">Performance Parts & Tuning</option>
+          </select>
+          <button type="submit" class="btn-submit">Submit Service Booking</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Google Reviews Section (Positioned at Bottom) -->
+  <section class="section reviews-section" id="reviews">
+    <div class="section-head">
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #131926; border: 1px solid #232e42; padding: 6px 16px; border-radius: 20px; margin-bottom: 14px;">
+        <i class="fa-brands fa-google" style="color: #4285f4;"></i>
+        <span style="color: #fff; font-weight: 700; font-size: 14px;">4.9 ★ Rated on Google Maps</span>
+      </div>
+      <h2>Real Google Reviews from Car Owners</h2>
+      <p>Swipe or scroll sideways to view verified customer experiences at CarageX Madhapur.</p>
+    </div>
+
+    <!-- Horizontal Scroll Carousel -->
+    <div class="reviews-carousel-wrapper">
+      <div class="reviews-carousel" id="reviewsSlider">
+        
+        <!-- 1. Saurabh S -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #2563eb;">SS</div>
+              <div class="reviewer-meta">
+                <h4>Saurabh S</h4>
+                <span>6 reviews • 3 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Superb experience, quicker service, better price with professional quality. I would recommend them for any car service, very happy with services."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 2. Sai Kiran -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #059669;">SK</div>
+              <div class="reviewer-meta">
+                <h4>Sai Kiran</h4>
+                <span>3 reviews • 2 photos • 2 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Great service! They did an excellent job on my car and everything was completed professionally. Friendly staff, fair pricing, and the car runs perfectly. Highly recommend!"</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 3. Gaurav Bethu -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #d97706;">GB</div>
+              <div class="reviewer-meta">
+                <h4>Gaurav Bethu</h4>
+                <span>Local Guide • 10 reviews • 3 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"I recently got my Stage 1 tuned Swift serviced at CarageX, and the experience was excellent as always. The team was professional, transparent, and paid attention to every detail throughout the service. They explained the work clearly..."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 4. Sai Sumanth -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #7c3aed;">SS</div>
+              <div class="reviewer-meta">
+                <h4>Sai Sumanth</h4>
+                <span>11 reviews • 3 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Excellent experience overall — the team handled everything I needed (service, repair work, and accessory installation) professionally and efficiently. The staff were knowledgeable, explained the work clearly, and the quality was top notch."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 5. Vismay Aswani -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #db2777;">VA</div>
+              <div class="reviewer-meta">
+                <h4>Vismay Aswani</h4>
+                <span>Local Guide • 52 reviews • 10 photos • 2 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Decent and very calm demeanour from the service manager. Naveen explained everything I needed to about the oils and gave me the necessary peace of mind, definitely giving my loyalty to them."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 6. Mouna Reddy -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #0284c7;">MR</div>
+              <div class="reviewer-meta">
+                <h4>Mouna Reddy</h4>
+                <span>Local Guide • 11 reviews • 2 photos • 2 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Excellent service we keep giving our bmw and discovery for periodic servicing regularly. Professional service."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+        <!-- 7. Neeraj Varma -->
+        <div class="review-card-h">
+          <div class="review-top">
+            <div class="reviewer-info">
+              <div class="avatar" style="background: #ea580c;">NV</div>
+              <div class="reviewer-meta">
+                <h4>Neeraj Varma</h4>
+                <span>Local Guide • 21 reviews • 24 photos • 3 months ago</span>
+              </div>
+            </div>
+            <i class="fa-brands fa-google google-icon"></i>
+          </div>
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Perfect one stop solution for all your car needs and services."</p>
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Google Review</div>
+        </div>
+
+      </div>
+
+      <!-- Left and Right Nav Buttons -->
+      <div class="carousel-nav-btns">
+        <button class="carousel-btn" onclick="document.getElementById('reviewsSlider').scrollBy({left: -380, behavior: 'smooth'})" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn" onclick="document.getElementById('reviewsSlider').scrollBy({left: 380, behavior: 'smooth'})" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/918977001761?text=Hello%20CarageX,%20I%20would%20like%20to%20book%20a%20car%20inspection." class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CarageX - Multi Brand Car Service & Repair. All rights reserved.</p>
+    <p style="margin-top: 8px;"><a href="https://www.instagram.com/carageindia/" target="_blank"><i class="fa-brands fa-instagram"></i> Follow @carageindia on Instagram</a></p>
+  </footer>
+
+</body>
+</html>
